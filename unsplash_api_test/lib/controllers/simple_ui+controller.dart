@@ -8,7 +8,7 @@ class SimpleUIController extends GetxController {
   RxList<PhotosModel> photos = RxList();
   RxBool isLoading = true.obs;
   RxString orderBy = "latest".obs;
-  RxString apikey = "8r7hznUswxlk32AM40psd5U7dgaATwKOcTLtOAlxRmU".obs;
+  RxString apikey = "YourApiKey".obs;
   var selectedIndex = 0.obs;
   List<String> orders = [
     "latest",
