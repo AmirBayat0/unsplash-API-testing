@@ -1,14 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import '../controllers/simple_ui+controller.dart';
+import '../controllers/app_controller.dart';
 
-class DetailView extends StatelessWidget {
-  DetailView({required this.index});
-  int index;
+class DetailsView extends StatelessWidget {
+  DetailsView({super.key, required this.index});
+  final int index;
 
-  SimpleUIController homeController = Get.find<SimpleUIController>();
+  final AppController homeController = Get.find<AppController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,12 +54,15 @@ class DetailView extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: 10,
+                  bottom: 30,
                   child: Text(
                     homeController.photos[index].createdAt!
                         .substring(0, 10)
                         .replaceAll("-", " / "),
-                    style: const TextStyle(color: Colors.white, fontSize: 15),
+                    style: GoogleFonts.ubuntu(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ],
